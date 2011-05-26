@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixVisualStudioExtensions", "WixVisualStudioExtensions\WixVisualStudioExtensions.csproj", "{1693CBA7-02E9-4369-8BB0-AE501DD633AA}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer", "Installer\Installer.wixproj", "{A35D00AC-84C5-4341-9E7A-E436B943EB5F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1693CBA7-02E9-4369-8BB0-AE501DD633AA} = {1693CBA7-02E9-4369-8BB0-AE501DD633AA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

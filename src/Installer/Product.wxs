@@ -47,7 +47,7 @@
 		<Icon Id="InstallerIcon" SourceFile="Resources\Installer.ico" />
 		<Property Id="ARPPRODUCTICON" Value="InstallerIcon" />
 		
-		<Feature Id='AddIn' Level='1' Title='Wix Visual Studio Extensions' Description='Installs the Wix Visual Studio Extensions.'>
+		<Feature Id='AddIn' Level='1' Title='Visual Studio 2010' Description='Installs the Wix Visual Studio 2010 Extensions.'>
 			<ComponentRef Id='d4cd22d7b8' />
       <ComponentRef Id='bbb4c805f7' />
 		</Feature>

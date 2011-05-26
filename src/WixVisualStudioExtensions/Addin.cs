@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using EnvDTE;
 using EnvDTE80;
 using Extensibility;
@@ -27,13 +28,13 @@ namespace WixVisualStudioExtensions
 
             if (connectMode != ext_ConnectMode.ext_cm_UISetup) return;
 
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertGuidCommand, "Insert WiX Guid", 101, true, 101);
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertFileIdCommand, "Insert WiX Id", 101, false, 102);
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertShortFilenameCommand, "Insert WiX Short Filename", 101, false, 103);
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertDirectoryElementCommand, "Insert WiX Directory", 101, false, 104);
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertComponentElementCommand, "Insert WiX Component", 101, false, 105);
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertFileElementCommand, "Insert WiX File", 101, false, 106);
-            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertFileAndShortcutElementCommand, "Insert WiX File And Shortcut", 101, false, 107);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertGuidCommand, "Insert WiX Guid", 101, true, 1);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertFileIdCommand, "Insert WiX Id", 101, false, 2);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertShortFilenameCommand, "Insert WiX Short Filename", 101, false, 3);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertDirectoryElementCommand, "Insert WiX Directory", 101, false, 4);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertComponentElementCommand, "Insert WiX Component", 101, false, 5);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertFileElementCommand, "Insert WiX File", 101, false, 6);
+            _applicationObject.AddContextMenuItem(_addInInstance, new[] { LocationCodeWindow }, InsertFileAndShortcutElementCommand, "Insert WiX File And Shortcut", 101, false, 7);
         }
 
         public void QueryStatus(string commandName, vsCommandStatusTextWanted neededText, ref vsCommandStatus status, ref object commandText)
