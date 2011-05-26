@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='Windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+
+	<Product 
+    Name='Wix Visual Studio Extensions' 
+    UpgradeCode='9186B3CA-CC75-40BD-96B7-F4F5AF465687' 
+    Id='AAA3A3E7-6E3E-4FF5-B54D-BB17909FE795' 
+    Language='1033' 
+    Manufacturer='Ultraviolet Catastrophe' 
+    Version='1.0'>
+		<Package Keywords='Installer'
+			  Description="Wix Visual Studio Extensions Installer"
+			  Comments='Wix Visual Studio Extensions' Manufacturer='Ultraviolet Catastrophe'
+			  InstallerVersion='150' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+		<Property Id="ALLUSERS">1</Property>
+		
+		<Media Id='1' Cabinet='WixVisualStudioExtensions.cab' EmbedCab='yes' />
+
+		<Directory Id='TARGETDIR' Name='SourceDir'>
+			<Directory Id='PersonalFolder'>
+
+        <Directory Id='dddd11d7b8' Name='Visual Studio 2010'>
+          
+					<Directory Id='d4cd11d777' Name='Addins'>
+
+						<Component Id='d4cd22d7b8' Guid='106C93CE-E5E6-4C1A-824A-DFD40F52147B'>
+							<File Id='d4cd11d7b8' Name='WixVisualStudioExtensions.addin' DiskId='1' Source='..\WixVisualStudioExtensions\WixVisualStudioExtensions.addin' Vital='yes'/>
+              <File Id='becc1ccee5' Name='WixVisualStudioExtensions.dll' DiskId='1' Source='..\WixVisualStudioExtensions\bin\Release\WixVisualStudioExtensions.dll' Vital='yes'/>
+            </Component>
+
+            <Directory Id='a222c805f7' Name='en-us'>
+                
+						    <Component Id='bbb4c805f7' Guid='F458281E-BC8D-4274-8DB6-71EC3F4D6F07'>
+                  <File Id='a334c805f7' Name='WixVisualStudioExtensions.resources.dll' DiskId='1' Source='..\WixVisualStudioExtensions\en-us\WixVisualStudioExtensions.resources.dll' Vital='yes'/>
+						    </Component>
+              
+            </Directory>
+          </Directory>
+				</Directory>
+			</Directory>
+		</Directory>
+		
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<UIRef Id="WixUI_FeatureTree" />
+
+		<Icon Id="InstallerIcon" SourceFile="Resources\Installer.ico" />
+		<Property Id="ARPPRODUCTICON" Value="InstallerIcon" />
+		
+		<Feature Id='AddIn' Level='1' Title='Wix Visual Studio Extensions' Description='Installs the Wix Visual Studio Extensions.'>
+			<ComponentRef Id='d4cd22d7b8' />
+      <ComponentRef Id='bbb4c805f7' />
+		</Feature>
+
+	</Product>
+</Wix>
